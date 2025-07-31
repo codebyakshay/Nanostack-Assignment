@@ -33,7 +33,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <LocalNavigation />
+        <AuthNavigation />
       </NavigationContainer>
     </SafeAreaProvider>
   );
