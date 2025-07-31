@@ -1,12 +1,23 @@
-import { Text, View } from "react-native";
-import React, { ReactElement } from "react";
+// src/navigations/AuthNavigation.tsx
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Login from "../screens/LoginScreen/Login";
+import Dashboard from "../screens/DashboardScreen/Dashboard";
 
-interface PropTypes {}
+export type AuthStackParamList = {
+  Dashboard: undefined;
+};
 
-export default function AuthNavigation({}: PropTypes): ReactElement {
+const Stack = createNativeStackNavigator<AuthStackParamList>();
+
+export default function AuthNavigation() {
   return (
-    <View>
-      <Text>AuthNavigation</Text>
-    </View>
+    <Stack.Navigator initialRouteName="Dashboard">
+      <Stack.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
 }
