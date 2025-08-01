@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
 
   divider: {
-    height: 0.3,
+    height: 1,
     width: 132,
     marginTop: 8,
     backgroundColor: "#F4F4F8",

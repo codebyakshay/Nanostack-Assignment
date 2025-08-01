@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { ReactElement, useLayoutEffect, useState } from "react";
+
+import { data } from "../../../data/data";
 import { COLORS } from "../../../constants/COLORS";
 import SegmentController from "../../../components/SegmentController";
 import StatCard from "../../../components/StatCard";
@@ -8,6 +10,8 @@ import ButtonWithIcon from "../../../components/ButtonWithIcon";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Octicons from "@expo/vector-icons/Octicons";
+import { FlatList } from "react-native-gesture-handler";
+import UserCard from "../../../components/UserCard";
 
 type PropTypes = {};
 
@@ -49,6 +53,22 @@ export default function Home({}: PropTypes): ReactElement {
           }
         />
       </View>
+
+      <View style={styles.userCardContainer}>
+        <FlatList
+          data={data}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <UserCard
+              name={item.name}
+              badgeCount={item.badgeCount}
+              profileImage={item.profileImage}
+              remainingMeals={item.remainingMeals}
+              attendance={item.attendance}
+            />
+          )}
+        />
+      </View>
     </View>
   );
 }
@@ -67,5 +87,10 @@ const styles = StyleSheet.create({
   btnContainer: {
     marginVertical: 12,
     marginLeft: 18,
+  },
+
+  userCardContainer: {
+    padding: 12,
+    height: "42%",
   },
 });

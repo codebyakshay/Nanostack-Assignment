@@ -4,6 +4,7 @@ import { DrawerContentComponentProps } from "@react-navigation/drawer";
 import CustomDrawerItem from "./CustomDrawerItem";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Entypo from "@expo/vector-icons/Entypo";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 
 export default function CustomDrawer({
   navigation,
@@ -16,7 +17,7 @@ export default function CustomDrawer({
     <SafeAreaView style={styles.container}>
       <View style={styles.crossBtnContainer}>
         <Pressable onPress={() => navigation.closeDrawer()}>
-          <Entypo name="cross" size={32} color="white" />
+          <Entypo name="cross" size={38} color="white" />
         </Pressable>
       </View>
 
@@ -32,6 +33,30 @@ export default function CustomDrawer({
           />
         );
       })}
+
+      <Pressable
+        style={() => [
+          {
+            flexDirection: "row",
+            position: "absolute",
+            left: 41,
+            top: 750,
+            alignItems: "center",
+          },
+        ]}
+      >
+        <Text
+          style={{
+            color: "white",
+            fontWeight: "600",
+            marginHorizontal: 8,
+            fontSize: 17,
+          }}
+        >
+          Sign-out
+        </Text>
+        <FontAwesome5 name="arrow-right" size={18} color="white" />
+      </Pressable>
 
       <View
         style={{
@@ -65,8 +90,8 @@ const styles = StyleSheet.create({
 
   crossBtnContainer: {
     position: "absolute",
-    top: 70,
-    left: 30,
+    top: 68,
+    left: 20,
     height: 42,
     width: 42,
     // backgroundColor: "black",

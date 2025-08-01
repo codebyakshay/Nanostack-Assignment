@@ -20,6 +20,10 @@ This project contains the implementation of the login flow UI for the NanoStack 
 
 <img src="demo_custom_drawer.png" alt="Login Screen Demo" width="300" />
 
+### Home Screen - 5
+
+<img src="./demo_home.png" alt="Home Screen Demo" width="300" />
+
 ## ✅ Features
 
 - Fully designed login screen using custom fonts (`LexendDeca`, `Lato`)
@@ -35,6 +39,7 @@ This project contains the implementation of the login flow UI for the NanoStack 
 - Reusable ButtonWithIcon component supporting prefix and suffix icons (passed as full JSX)
 - Fake customer card data defined in `src/data/data.ts` including attendance status and meal info
 - Dynamic icon rendering for drawer items using screen name → icon mapping
+- Complete Home screen UI featuring segmented meal selector, attendance cards with play/pause & manual checkboxes, stats widgets, and search bar
 
 ## 🚀 Setup
 
