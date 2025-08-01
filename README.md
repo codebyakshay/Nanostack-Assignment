@@ -34,7 +34,6 @@ Install dependencies:
 
 ```bash
 npm install
-npx expo install expo-font expo-splash-screen
 ```
 
 Run the project:

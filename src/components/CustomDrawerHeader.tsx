@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS } from "../constants/COLORS";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 export default function CustomDrawerHeader() {
   const navigation = useNavigation();
@@ -21,7 +22,11 @@ export default function CustomDrawerHeader() {
       </View>
 
       <View style={styles.right}>
-        <Feather name="truck" size={20} color="#4B4B4B" />
+        <MaterialCommunityIcons
+          name="truck-fast-outline"
+          size={24}
+          color="black"
+        />
         <Feather
           name="bell"
           size={20}

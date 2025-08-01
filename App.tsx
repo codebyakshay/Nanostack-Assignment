@@ -13,11 +13,18 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
+    //
     LexendDecaVariable: require("./assets/font/LexendDeca-VariableFont_wght.ttf"),
+
+    //
     LatoBlack: require("./assets/font/Lato-Black.ttf"),
     LatoBold: require("./assets/font/Lato-Bold.ttf"),
     LatoLight: require("./assets/font/Lato-Light.ttf"),
     LatoRegular: require("./assets/font/Lato-Regular.ttf"),
+
+    //
+    PoppinsSemiBold: require("./assets/font/Poppins-SemiBold.ttf"),
+    PoppinsRegular: require("./assets/font/Poppins-Regular.ttf"),
   });
 
   useEffect(() => {
