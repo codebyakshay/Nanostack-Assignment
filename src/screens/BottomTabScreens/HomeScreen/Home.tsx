@@ -12,6 +12,9 @@ import Fontisto from "@expo/vector-icons/Fontisto";
 import Octicons from "@expo/vector-icons/Octicons";
 import { FlatList } from "react-native-gesture-handler";
 import UserCard from "../../../components/UserCard";
+import { height, width } from "../../../utils/responsive";
+import { styles } from "./styles";
+import SearchBar from "../../../components/SearchBar";
 
 type PropTypes = {};
 
@@ -19,7 +22,12 @@ export default function Home({}: PropTypes): ReactElement {
   const [selectedTab, setSelectedTab] = useState("Breakfast");
 
   return (
-    <View style={{ backgroundColor: COLORS.BACKGROUND, flex: 1, padding: 12 }}>
+    <View
+      style={{
+        backgroundColor: COLORS.BACKGROUND,
+        flex: 1,
+      }}
+    >
       <View style={styles.segmentContainer}>
         <SegmentController
           selectedTab={selectedTab}
@@ -33,6 +41,7 @@ export default function Home({}: PropTypes): ReactElement {
         <StatCard count={5} label="Total" dotColor="#456dffff" />
       </View>
 
+      {/* // button container */}
       <View style={styles.btnContainer}>
         <ButtonWithIcon
           btnLabel="Upload Today Meal !"
@@ -54,6 +63,9 @@ export default function Home({}: PropTypes): ReactElement {
         />
       </View>
 
+      <View style={styles.searchContainer}>
+        <SearchBar />
+      </View>
       <View style={styles.userCardContainer}>
         <FlatList
           data={data}
@@ -72,25 +84,3 @@ export default function Home({}: PropTypes): ReactElement {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  segmentContainer: {
-    alignItems: "center",
-    marginTop: 8,
-  },
-
-  statCardContainer: {
-    marginVertical: 12,
-    marginLeft: 18,
-    flexDirection: "row",
-  },
-  btnContainer: {
-    marginVertical: 12,
-    marginLeft: 18,
-  },
-
-  userCardContainer: {
-    padding: 12,
-    height: "42%",
-  },
-});

@@ -30,8 +30,8 @@ export default function StatCard({
 
 const styles = StyleSheet.create({
   card: {
-    width: 92,
-    height: 110,
+    width: 109,
+    height: 130,
     backgroundColor: "#fff",
     borderRadius: 16,
     alignItems: "center",

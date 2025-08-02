@@ -30,7 +30,7 @@ export default function ButtonWithIcon({
 
 const styles = StyleSheet.create({
   container: {
-    width: 326,
+    width: "auto",
     height: 49,
     alignItems: "center",
     borderRadius: 10,

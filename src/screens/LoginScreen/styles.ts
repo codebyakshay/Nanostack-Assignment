@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../constants/COLORS";
+import { height, width } from "../../utils/responsive";
 
 export const styles = StyleSheet.create({
   screen: {
@@ -29,16 +30,16 @@ export const styles = StyleSheet.create({
   dividerContainer: {
     alignItems: "center",
     justifyContent: "center",
-  },
+  }, //res
 
   dividerLine: {
-    width: "40%",
-    height: 5,
-    borderWidth: 0.7,
-    borderRadius: 99,
+    width: width * 0.4, // 40% of screen width
+    height: height * 0.006, // ~5-6px on standard phones
+    borderWidth: width * 0.0015, // ~0.6px (scales nicely)
+    borderRadius: 999, // keep it max for pill look
     borderColor: COLORS.LINK_ORANGE,
     backgroundColor: COLORS.LINK_ORANGE,
-  },
+  }, // res
 
   //
   bottomContainer: {

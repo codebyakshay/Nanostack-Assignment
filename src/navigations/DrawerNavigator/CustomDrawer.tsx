@@ -5,6 +5,9 @@ import CustomDrawerItem from "./CustomDrawerItem";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { styles } from "./CustomDrawerStyles";
+import { useDispatch } from "react-redux";
+import { logout } from "../../store/feature/Slices/AuthSlice";
 
 export default function CustomDrawer({
   navigation,
@@ -12,7 +15,11 @@ export default function CustomDrawer({
   state,
 }: DrawerContentComponentProps) {
   //
+  const dispatch = useDispatch();
 
+  function handleLogout() {
+    dispatch(logout());
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.crossBtnContainer}>
@@ -44,6 +51,7 @@ export default function CustomDrawer({
             alignItems: "center",
           },
         ]}
+        onPress={handleLogout}
       >
         <Text
           style={{
@@ -81,19 +89,3 @@ export default function CustomDrawer({
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-  },
-
-  crossBtnContainer: {
-    position: "absolute",
-    top: 68,
-    left: 20,
-    height: 42,
-    width: 42,
-    // backgroundColor: "black",
-  },
-});

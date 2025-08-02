@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React, { ReactElement } from "react";
+import { height, width } from "../utils/responsive";
 
 interface PropTypes {}
 
@@ -16,14 +17,13 @@ export default function LogoContainer({}: PropTypes): ReactElement {
 
 const styles = StyleSheet.create({
   logoContainer: {
-    height: 209,
-    width: 211,
-    borderRadius: 200,
+    height: height * 0.23, // 23% of screen height
+    width: width * 0.5, // 50% of screen width
+    borderRadius: (width * 0.5) / 2, // perfect circle
   },
-
   logoStyle: {
     height: "100%",
     width: "100%",
-    borderRadius: 200,
+    borderRadius: (width * 0.5) / 2, // perfect circle
   },
 });

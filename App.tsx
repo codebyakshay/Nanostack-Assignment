@@ -6,8 +6,9 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 import { NavigationContainer } from "@react-navigation/native";
-import AuthNavigation from "./src/navigations/AuthNavigation";
-import LocalNavigation from "./src/navigations/LocalNavigation";
+import RootNavigator from "./src/navigations/RootNavigator";
+import { Provider as ReduxProvider } from "react-redux";
+import { store } from "./src/store/store";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -38,10 +39,12 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <AuthNavigation />
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <ReduxProvider store={store}>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <RootNavigator />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </ReduxProvider>
   );
 }

@@ -1,45 +1,62 @@
-# NanoStack Assignment
+# NanoStack Assignment App
 
-This project contains the implementation of the login flow UI for the NanoStack assignment using React Native and Expo.
+A responsive mobile app built with React Native for the NanoStack assignment. It includes a full authentication flow using Redux and conditionally rendered navigation stacks based on auth state.
 
-# 📸 Demo
+---
 
-### LOGIN SCREEN - 1
+## ✅ Final Features
 
-<img src="./demo.png" alt="Login Screen Demo" width="300" />
+### 🔒 Authentication
 
-### Custom BottomTabs - 2
+- Redux Toolkit setup with `login` and `logout` reducers
+- Global `isAuthenticated` state management
+- Seamless navigator switching using `RootNavigator`
 
-<img src="./demo_bottomtab.png" alt="bottom tabs Demo" width="300" />
+### 🧭 Navigation
 
-### Basic Drawer - 3
+- Conditional root navigation (`AuthNavigation` vs `LocalNavigation`)
+- Custom drawer with icons, close button, version label
+- Home screen with:
+  - Meal selector
+  - Attendance cards
+  - Stats widgets
+  - Search bar
 
-<img src="./demo_drawer.png" alt="basic drawer Demo" width="300" />
+### 🧱 Reusable Components
 
-### Custom Drawer - 4
+- `ButtonWithIcon` (prefix/suffix JSX icons)
+- `CustomCheckbox`
+- `PlayPauseBtn` with logic
+- `SegmentController`
 
-<img src="demo_custom_drawer.png" alt="Login Screen Demo" width="300" />
+### 📱 Responsive UI
 
-### Home Screen - 5
+- Layouts use `Dimensions.get("window")` for scaling
+- Fully optimized for:
+  - iPhone 16 Pro (2622×1206 @ 460ppi)
+  - Android emulator (1024×2400 @ 420dpi)
+- ⚠️ May not render correctly on other device sizes
 
-<img src="./demo_home.png" alt="Home Screen Demo" width="300" />
+---
 
-## ✅ Features
+## 🛠 Tech Stack
 
-- Fully designed login screen using custom fonts (`LexendDeca`, `Lato`)
-- Centralized color system from `src/constants/colors.ts`
-- Responsive and modern UI built with reusable components
-- Organized file structure with screens, navigation, and components
-- Nested navigation using Drawer and Bottom Tabs
-- CustomBottomTab component with floating AddUser button and active tab labeling
-- CustomDrawerHeader for improved top bar layout with icons and spacing
-- SegmentController component for Breakfast/Lunch/Dinner toggle with parent state control
-- SwitchToCustomerNotice and TermsNotice extracted for clean, reusable UI
-- Fully customized full-width drawer with animated close button and screen highlighting
-- Reusable ButtonWithIcon component supporting prefix and suffix icons (passed as full JSX)
-- Fake customer card data defined in `src/data/data.ts` including attendance status and meal info
-- Dynamic icon rendering for drawer items using screen name → icon mapping
-- Complete Home screen UI featuring segmented meal selector, attendance cards with play/pause & manual checkboxes, stats widgets, and search bar
+- **React Native**
+- **Redux Toolkit**
+- **React Navigation**
+- **Expo (EAS Build)**
+- **TypeScript & VS Code**
+- **Custom Font Integration**
+
+---
+
+## 📸 Screenshots
+
+| Login Screen                                  | Drawer                                         | Home Screen                                        |
+| --------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- |
+| <img src="./login_preview.png" width="300" /> | <img src="./drawer_preview.png" width="300" /> | <img src="./homescreen_preview.png" width="300" /> |
+
+---
 
 ## 🚀 Setup
 
@@ -54,3 +71,25 @@ Run the project:
 ```bash
 npx expo start
 ```
+
+---
+
+## 🎬 Demo
+
+![App Demo](./demo.gif)
+
+- Video demo: [Watch the demo video](https://drive.google.com/file/d/1Hh1CGyks7d-7ikMq5W-W7o1igLxL7mMf/view?usp=drive_link)
+
+- Download APK: [Get the APK](https://drive.google.com/file/d/16kzIZB9vu7GbmWvfUVMiAoUVwULEvdC1/view?usp=drive_link)
+
+---
+
+---
+
+## 📌 Notes
+
+- This NanoStack Assignment App was tested and developed on:
+  - Medium Android Emulator: resolution **1024×2400**, density **420dpi**
+  - iPhone 16 Pro: resolution **2622×1206**, density **460ppi**
+- In React Native, the scale factor is 3 on iPhone 16 Pro, meaning **1 point = 3 physical pixels**
+- ⚠️ Layout and design may break on devices with significantly different screen specs

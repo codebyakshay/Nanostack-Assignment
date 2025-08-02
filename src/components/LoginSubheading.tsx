@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { ReactElement } from "react";
+import { height, width } from "../utils/responsive";
 
 interface PropTypes {}
 
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
   topTextContainer: {
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: -50,
-    marginTop: 50,
+    marginTop: height * 0.06, // ~5% of screen height
+    marginBottom: -height * 0.05, // pull up by 5% of screen height
   },
 });

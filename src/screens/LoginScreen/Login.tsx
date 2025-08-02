@@ -4,6 +4,10 @@ import React, { ReactElement, useState } from "react";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { LocalStackParamList } from "../../navigations/LocalNavigation";
 
+//redux
+import { useDispatch } from "react-redux";
+import { login } from "../../store/feature/Slices/AuthSlice";
+
 import { styles } from "./styles";
 import NumberInputField from "../../components/NumberInputField";
 import TermsNotice from "../../components/TermsNotice";
@@ -22,7 +26,12 @@ interface PropTypes {
 }
 
 export default function Login({ navigation }: PropTypes): ReactElement {
+  const dispatch = useDispatch();
   const [mobileNumber, setMobileNumber] = useState("");
+
+  const handleLogin = () => {
+    dispatch(login());
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -50,7 +59,7 @@ export default function Login({ navigation }: PropTypes): ReactElement {
             </View>
 
             <View style={styles.loginButtonContainer}>
-              <Button title="Login" />
+              <Button title="Login" onPress={() => handleLogin()} />
             </View>
 
             <View style={styles.signUpText}>

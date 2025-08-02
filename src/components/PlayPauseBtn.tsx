@@ -47,7 +47,11 @@ export default function PlayPauseBtn({
             </>
           )}
         </View>
-        <View style={styles.verticalDivider} />
+
+        {((attendance.mode === "manual" && attendance.status === "pending") ||
+          attendance.status === "stopped") && (
+          <View style={styles.verticalDivider} />
+        )}
 
         <View style={styles.iconContainer}>
           {attendance.mode == "auto" && attendance.status == "running" ? (

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import React, { ReactElement } from "react";
+import { height, width } from "../utils/responsive";
 
 interface PropTypes {
   value: string;
@@ -34,32 +35,32 @@ export default function NumberInputField({
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 10,
+    marginVertical: height * 0.012, // ~10px
     borderBottomWidth: StyleSheet.hairlineWidth,
-    width: "85%",
+    width: width * 0.85, // 85% screen width
   },
   legend: {
-    marginBottom: 6,
-    fontSize: 16,
+    marginBottom: height * 0.007, // ~6px
+    fontSize: width * 0.04, // ~16px (based on width)
     color: "#333",
   },
   inputWrapper: {
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
+    borderRadius: width * 0.02, // ~8px
+    paddingHorizontal: width * 0.025, // ~10px
+    paddingVertical: height * 0.007, // ~6px
   },
   prefix: {
-    marginRight: 8,
-    fontSize: 16,
+    marginRight: width * 0.02, // ~8px
+    fontSize: width * 0.04, // ~16px
     color: "#000000",
     fontFamily: "LexendDecaVariable",
     fontWeight: "400",
   },
   textInput: {
     flex: 1,
-    fontSize: 16,
+    fontSize: width * 0.04, // ~16px
     paddingVertical: 0,
     fontFamily: "LexendDecaVariable",
     fontWeight: "400",

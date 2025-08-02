@@ -13,6 +13,7 @@ export default function Button({ title, onPress }: PropTypes): ReactElement {
         styles.conatiner,
         { opacity: pressed ? 0.6 : 1 },
       ]}
+      onPress={onPress}
     >
       <Text
         style={{
